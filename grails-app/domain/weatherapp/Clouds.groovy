@@ -1,6 +1,5 @@
 package weatherapp
 import groovy.transform.CompileStatic
-
 /**
  * @all represents the cloudiness in a city returned by the api request
  */
