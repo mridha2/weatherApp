@@ -13,5 +13,19 @@ class Sys {
     Integer sunrise
     Integer sunset
     static constraints = {
+        id nullable: false
+        type blank: false
+        message nullable: false
+        country blank: false
+        sunset nullable: false
+        sunrise nullable: false
+    }
+    def logback(){
+        log.info(id)
+        log.info(type)
+        log.info(message)
+        log.info(country)
+        log.info(sunrise)
+        log.info(sunset)
     }
 }

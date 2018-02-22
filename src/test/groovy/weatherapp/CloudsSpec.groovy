@@ -15,8 +15,24 @@ class CloudsSpec extends Specification {
     def cleanup() {
     }
 
-    void "test something"() {
-        expect:"fix me"
-            true == false
+    void "test the cloud domain class validation"(){
+        when: 'invalid data'
+        Clouds cloud =  new Clouds(all: "hello")
+        cloud.save()
+
+        then: 'The cloudiness value is not correct and has not been saved'
+        cloud.hasErrors()
+        cloud.errors.getFieldError('all')
+        Clouds.count() == 0
+
+        when: 'valid data'
+        cloud.all = 90
+        cloud.save()
+
+        then: 'The cloudiness level is correct and has been saved'
+        Clouds.count() == 1
+        Clouds.first().all == 90
+
+
     }
 }

@@ -12,5 +12,15 @@ class Weather {
     String description
     String icon
     static constraints = {
+        id nullable: false
+        main blank: false
+        description blank: false
+        icon blank: false
+    }
+    def logback(){
+        log.info(id)
+        log.info(main)
+        log.info(description)
+        log.info(icon)
     }
 }

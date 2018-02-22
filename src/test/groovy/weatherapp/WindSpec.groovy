@@ -16,8 +16,27 @@ class WindSpec extends Specification {
     def cleanup() {
     }
 
-    void "test something"() {
-        expect:"fix me"
-            true == false
+    void "test the Wind domain class validation"(){
+        when: 'invalid data'
+        Wind wind = new Wind(speed: "fast", deg: "high")
+        wind.save()
+
+        then: 'The Wind values are not correct and have not been saved'
+        wind.hasErrors()
+        wind.errors.getFieldError('speed')
+        wind.errors.getFieldError('deg')
+
+        Wind.count() == 0
+
+        when: 'valid data'
+        wind.speed = 4.1
+        wind.deg = 80
+
+        then: 'The Wind values are correct and been been saved'
+        Wind.count() == 1
+        Wind.first().speed == 4.1
+        Wind.first().deg == 90
+
+
     }
 }

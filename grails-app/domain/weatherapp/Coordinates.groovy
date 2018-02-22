@@ -10,5 +10,11 @@ class Coordinates {
     Float lon
     Float lat
     static constraints = {
+        lon nullable: false
+        lat nullable: false
+    }
+    def logback(){
+        log.info(lon)
+        log.info(lat)
     }
 }

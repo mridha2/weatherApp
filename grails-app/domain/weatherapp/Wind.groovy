@@ -9,5 +9,12 @@ class Wind {
     Float speed
     Float deg
     static constraints = {
+        speed nullable: false
+        deg nullable: false
+    }
+    def logback(){
+        log.info(speed)
+        log.info(deg)
+
     }
 }
