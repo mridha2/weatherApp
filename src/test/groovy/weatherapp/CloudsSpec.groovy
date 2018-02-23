@@ -18,7 +18,7 @@ class CloudsSpec extends Specification {
     void "test the cloud domain class validation"(){
         when: 'invalid data'
         Clouds cloud =  new Clouds(all: "hello")
-        cloud.save()
+        cloud.validate()
 
         then: 'The cloudiness value is not correct and has not been saved'
         cloud.hasErrors()
@@ -27,7 +27,7 @@ class CloudsSpec extends Specification {
 
         when: 'valid data'
         cloud.all = 90
-        cloud.save()
+        cloud.validate()
 
         then: 'The cloudiness level is correct and has been saved'
         Clouds.count() == 1

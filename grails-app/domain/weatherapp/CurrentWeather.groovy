@@ -1,5 +1,4 @@
 package weatherapp
-import groovy.transform.CompileStatic
 import org.slf4j.Logger.*
 /**
  * A method that returns the current weather for a city
@@ -10,13 +9,13 @@ import org.slf4j.Logger.*
  * @Wind calls the wind method and gets the speed and degree for the wind in the city
  */
 
-@CompileStatic
 class CurrentWeather {
     Clouds clouds
     Coordinates coordinates
     Sys sys
     List<Weather> weatherList
     Wind wind
+    Main main
     String base
     Integer visibility
     Integer dt
@@ -36,18 +35,8 @@ class CurrentWeather {
         cityId nullable: false
         cityName blank: false
         cod nullable: false
+        main nullable: false
+
     }
-    def logback(){
-        log.info(clouds)
-        log.info(coordinates)
-        log.info(sys)
-        log.info(weatherList)
-        log.info(wind)
-        log.info(base)
-        log.info(visibility)
-        log.info(dt)
-        log.info(cityName)
-        log.info(cityId)
-        log.info(cod)
-    }
+
 }

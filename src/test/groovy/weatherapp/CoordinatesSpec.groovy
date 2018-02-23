@@ -18,7 +18,7 @@ class CoordinatesSpec extends Specification {
     void "test the coordinate domain class validation"(){
         when: 'invalid data'
         Coordinates coor = new Coordinates(lon: "hello", lat: "world")
-        coor.save()
+        coor.validate()
 
         then: 'The coordinate values are not correct and have not been saved'
         coor.hasErrors()
@@ -29,7 +29,7 @@ class CoordinatesSpec extends Specification {
         when: 'valid data'
         coor.lat = 51.51
         coor.lon = -0.13
-        coor.save()
+        coor.validate()
 
         then: 'The Coordinates are correct and have been saved'
         Coordinates.count() == 1

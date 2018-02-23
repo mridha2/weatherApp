@@ -18,7 +18,7 @@ class WeatherSpec extends Specification {
     void "test the Weather domain class validation"(){
         when: 'invalid data'
         Weather weather = new Weather(id: "hot", main: 100, description: 10, icon: "happy")
-        weather.save()
+        weather.validate()
 
         then: 'The Weather values are not correct and have not been saved'
         weather.hasErrors()
@@ -33,6 +33,7 @@ class WeatherSpec extends Specification {
         weather.main = "Drizzle"
         weather.description = "light intensity drizzle"
         weather.icon = "09D"
+        weather.validate()
 
         then: 'The Weather values are correct and been been saved'
         Weather.count() == 1

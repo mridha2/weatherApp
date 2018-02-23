@@ -31,13 +31,19 @@ if (Environment.isDevelopmentMode() && targetDir != null) {
             pattern = "%level %logger - %msg%n"
         }
     }
+
+    appender("debugLog", FileAppender) {
+        file = "${targetDir}/debug.log"
+        append = true
+        encoder(PatternLayoutEncoder) {
+            pattern = "%d{yyyy-MM-dd HH:mm:ss.SSS} - %level %logger - %msg%n"
+        }
+    }
+
+
     logger("StackTrace", ERROR, ['FULL_STACKTRACE'], false)
-    logger 'grails.app.domains', INFO, ['FULL_STACKTRACE', false]
-    logger 'grails.app.domain.weatherapp.Clouds', INFO, ['FULL_STACKTRACE',false]
-    logger 'grails.app.domain.weatherapp.Coordinates', INFO, ['FULL_STACKTRACE',false]
-    logger 'grails.app.domain.weatherapp.CurrentWeather', DEBUG, ['FULL_STACKTRACE',false]
-    logger 'grails.app.domain.weatherapp.Sys', INFO, ['FULL_STACKTRACE',false]
-    logger 'grails.app.domain.weatherapp.Weather', DEBUG, ['FULL_STACKTRACE',false]
-    logger 'grails.app.domain.weatherapp.Wind', INFO, ['FULL_STACKTRACE',false]
+    logger("grails.app.controllers", INFO, ['STDOUT', 'debugLog'], false)
+    logger("grails.app.domain", INFO, ['STDOUT', 'debugLog'], false)
+
 }
 root(ERROR, ['STDOUT'])

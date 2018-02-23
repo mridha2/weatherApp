@@ -19,7 +19,7 @@ class WindSpec extends Specification {
     void "test the Wind domain class validation"(){
         when: 'invalid data'
         Wind wind = new Wind(speed: "fast", deg: "high")
-        wind.save()
+        wind.validate()
 
         then: 'The Wind values are not correct and have not been saved'
         wind.hasErrors()
@@ -31,6 +31,7 @@ class WindSpec extends Specification {
         when: 'valid data'
         wind.speed = 4.1
         wind.deg = 80
+        wind.validate()
 
         then: 'The Wind values are correct and been been saved'
         Wind.count() == 1

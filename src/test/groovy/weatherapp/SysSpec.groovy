@@ -18,7 +18,7 @@ class SysSpec extends Specification {
     void "test the Sys domain class validation"(){
         when: 'invalid data'
         Sys sys = new Sys(type: "weather", id: "city", message: "hello", country: "lincoln", sunrise: "morning", sunset: "night" )
-        sys.save()
+        sys.validate()
 
         then: 'The sys values are not correct and have not been saved'
         sys.hasErrors()
@@ -37,6 +37,7 @@ class SysSpec extends Specification {
         sys.country = "GB"
         sys.sunrise = 1485762037
         sys.sunset = 1485794875
+        sys.validate()
 
         then: 'The Sys values are correct and been been saved'
         Sys.count() == 1
