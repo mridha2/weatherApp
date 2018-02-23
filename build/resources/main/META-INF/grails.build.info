@@ -1,0 +1,6 @@
+#Thu, 22 Feb 2018 10:19:54 -0600
+
+info.app.version=0.1
+info.app.name=weatherApp
+grails.env=development
+info.app.grailsVersion=3.2.12

@@ -1,0 +1,17 @@
+2018-02-22 11:05:42.093 - INFO grails.app.domain.weatherapp.Clouds - this is from the clouds method
+2018-02-22 11:05:42.095 - INFO grails.app.domain.weatherapp.Coordinates - this is from the Coordinates method
+2018-02-22 11:05:42.095 - INFO grails.app.domain.weatherapp.CurrentWeather - this is from the CurrentWeather method
+2018-02-22 11:05:42.095 - INFO grails.app.domain.weatherapp.Sys - this is from the sys method
+2018-02-22 11:05:42.095 - INFO grails.app.domain.weatherapp.Weather - this is from the Weather method
+2018-02-22 11:05:42.095 - INFO grails.app.domain.weatherapp.Wind - this is from the Wind method
+2018-02-22 11:05:42.095 - INFO grails.app.domain.weatherapp.Main - this is from the Main method
+2018-02-22 11:07:12.184 - INFO grails.app.controllers.weatherapp.CurrentWeatherController - This is the Clouds
+2018-02-22 11:12:42.762 - INFO grails.app.controllers.weatherapp.CurrentWeatherController - This is the Clouds
+2018-02-22 11:21:47.641 - INFO grails.app.controllers.weatherapp.CurrentWeatherController - This is the Clouds
+2018-02-22 11:22:48.599 - INFO grails.app.domain.weatherapp.Clouds - this is from the clouds method
+2018-02-22 11:22:48.600 - INFO grails.app.domain.weatherapp.Coordinates - this is from the Coordinates method
+2018-02-22 11:22:48.600 - INFO grails.app.domain.weatherapp.CurrentWeather - this is from the CurrentWeather method
+2018-02-22 11:22:48.601 - INFO grails.app.domain.weatherapp.Sys - this is from the sys method
+2018-02-22 11:22:48.601 - INFO grails.app.domain.weatherapp.Weather - this is from the Weather method
+2018-02-22 11:22:48.601 - INFO grails.app.domain.weatherapp.Wind - this is from the Wind method
+2018-02-22 11:22:48.601 - INFO grails.app.domain.weatherapp.Main - this is from the Main method
